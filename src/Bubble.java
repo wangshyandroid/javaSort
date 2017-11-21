@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by wangshy on 17/11/20.
  */
@@ -62,7 +64,7 @@ public class Bubble implements Isort {
      * 就将它们互换。
      */
     @Override
-    public void print(int[] a) {
+    public int[] sort(int a[]) {
         //第一次for循环代表 一共执行数组长度减1次的排序
         for (int i = 0; i < a.length - 1; i++) {
             //第二次for循环 代表第几次排序
@@ -79,17 +81,8 @@ public class Bubble implements Isort {
                     System.out.println(a[j] + "<" + a[j + 1] + "所以 位置不变");
                 }
             }
-            System.out.print("第" + (i + 1) + "次排序的结果: \t");
-            print(a);
-            System.out.println();
+            System.out.print("第" + (i + 1) + "次排序的结果: \t" + Arrays.toString(a));
         }
-        System.out.print("最后排序的结果: \t");
-    }
-
-    @Override
-    public void sort(int a[]) {
-        for (int j = 0; j < a.length; j++) {
-            System.out.print(a[j] + "\t");
-        }
+        return a;
     }
 }
